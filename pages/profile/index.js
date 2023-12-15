@@ -19,11 +19,11 @@ export default function User() {
     (state) => state.profile
   );
   const router = useRouter();
-  const { q } = router.query;
 
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const { q } = router.query;
     dispatch(getRepos(q));
   }, [q]);
 
