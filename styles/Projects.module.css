@@ -1,0 +1,15 @@
+.section {
+}
+.container {
+}
+.container > ul {
+  display: flex;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+.container > ul > li {
+  padding: 0.5rem 1rem;
+  border-left: 1px solid;
+}
+

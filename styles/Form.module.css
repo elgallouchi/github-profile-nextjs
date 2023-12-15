@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  /* gap: 1rem; */
+}
+.form > p {
+  /* width: 100%; */
+}
+.form > p > input {
+  font-size: .9rem;
+  border: 1px solid var(--borderDark);
+  padding: 0.5rem;
+  border-radius: 0.3rem 0 0 0.3rem;
+  color: #444;
+  outline: none;
+  background-color: var(--bgDark);
+  color: var(--text);
+}
+.form > p > button {
+  font-size: .9rem;
+  padding: 0.5rem ;
+  border-radius: 0 0.3rem 0.3rem 0;
+  color: var(--text);
+  background-color: var(--btnDark);
+  border: 1px solid var(--borderDark);
+  cursor: pointer;
+  /* background-color: var(--green); */
+}
