@@ -1,16 +1,11 @@
 import React, { useEffect } from "react";
 import styles from "../../styles/Profile.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { getProfile } from "../../Store/profileSlice";
 
 export default function Profile({ profileUser, loading }) {
-  // const { profileUser, loading } = useSelector((state) => state.profile);
-
   return (
     <div className={styles.profile}>
       <div className={styles.container}>
         <div className={styles.header}></div>
-
 
         {loading ? (
           <>

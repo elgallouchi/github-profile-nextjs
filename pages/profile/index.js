@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { getRepos } from "../../Store/profileSlice";
-import Profile from "../../Components/Profile";
 import styles from "../../styles/Home.module.css";
 import st from "../../styles/Repos.module.css";
 import { RiBookMarkLine } from "react-icons/ri";

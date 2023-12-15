@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { getProfile } from "../../Store/profileSlice";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 import styles from "../../styles/Form.module.css";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 export default function Form() {
   const router = useRouter();
