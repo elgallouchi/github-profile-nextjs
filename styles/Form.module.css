@@ -9,7 +9,7 @@
   /* width: 100%; */
 }
 .form > p > input {
-  font-size: .9rem;
+  font-size: 0.9rem;
   border: 1px solid var(--borderDark);
   padding: 0.5rem;
   border-radius: 0.3rem 0 0 0.3rem;
@@ -19,8 +19,8 @@
   color: var(--text);
 }
 .form > p > button {
-  font-size: .9rem;
-  padding: 0.5rem ;
+  font-size: 0.9rem;
+  padding: 0.5rem;
   border-radius: 0 0.3rem 0.3rem 0;
   color: var(--text);
   background-color: var(--btnDark);
