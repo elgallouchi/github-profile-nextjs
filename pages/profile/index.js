@@ -22,9 +22,9 @@ export default function User() {
   const router = useRouter();
 
   const dispatch = useDispatch();
+  const { q } = router.query;
 
   useEffect(() => {
-    const { q } = router.query;
     dispatch(getRepos(q));
   }, [q]);
 
