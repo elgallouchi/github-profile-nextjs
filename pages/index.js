@@ -1,20 +1,22 @@
 import react from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-// import useApi from "../hooks/useApi";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getFollowers } from "../Store/followersSlice";
+import Image from "next/legacy/image";
+import Link from "next/link";
 
 export default function Home() {
-  const { error, loading, following } = useSelector((state) => state.following);
-
+  const { error, loading, followers } = useSelector((state) => state.followers);
   const dispatch = useDispatch();
-  // const [repos, getRepos, error] = useApi();
-  // useEffect(() => {
-  //   console.log(repos);
-  //   getFollowing("hassanElgallouchi");
-  //   console.log(repos, error);
-  // }, []);
+
+  useEffect(() => {
+    console.log("repos");
+    dispatch(getFollowers());
+    console.log(followers, error, loading);
+    !loading && console.log(followers);
+  }, []);
   return (
     <>
       <Head>
@@ -34,6 +36,55 @@ export default function Home() {
               sapiente atque reiciendis. Esse, assumenda repellendus!
               Distinctio, ab.
             </p>
+          </div>
+
+          <div className={styles.users}>
+            {!loading &&
+              followers.slice(0, 7).map((user) => (
+                <div className={styles.user}>
+                  <div className={styles.header}>
+                    <Link
+                      className={styles.userlink}
+                      href={`/profile?q=${user.login}`}
+                    >
+                      <img className={styles.avatar} src={user.avatar_url} />
+                      <h5 className={styles.name}>{user.login}</h5>
+                    </Link>
+                    <span>started following you</span>
+                  </div>
+                  <div className={styles.footer}>
+                    <Link
+                      href="/profile?q=elgallouchi"
+                      className={styles.footer_link}
+                    >
+                      <img
+                        className={styles.footer_avatar}
+                        src="https://avatars.githubusercontent.com/u/67022915?v=4"
+                        alt=""
+                      />
+                      <h5 className={styles.footer_name}>elgallouchi</h5>
+                    </Link>
+                    <button className={styles.footer_button}>Follow</button>
+                  </div>
+                </div>
+              ))}
+            {/* <div className={styles.user}>
+              <div className={styles.header}>
+                <img
+                  className={styles.avatar}
+                  src="https://avatars.githubusercontent.com/u/19738526?v=4"
+                />
+                <h4 className={styles.name}>name</h4>
+              </div>
+              <div className={styles.settings}>settings</div>
+            </div> */}
+            <a
+              href="https://github.com/elgallouchi?tab=followers"
+              className={styles.more_button}
+              target="_blank"
+            >
+              More
+            </a>
           </div>
         </div>
       </main>
