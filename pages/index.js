@@ -40,8 +40,8 @@ export default function Home() {
 
           <div className={styles.users}>
             {!loading &&
-              followers.slice(0, 7).map((user) => (
-                <div className={styles.user}>
+              followers.slice(0, 7).map((user, index) => (
+                <div key={index} className={styles.user}>
                   <div className={styles.header}>
                     <Link
                       className={styles.userlink}
@@ -68,16 +68,6 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            {/* <div className={styles.user}>
-              <div className={styles.header}>
-                <img
-                  className={styles.avatar}
-                  src="https://avatars.githubusercontent.com/u/19738526?v=4"
-                />
-                <h4 className={styles.name}>name</h4>
-              </div>
-              <div className={styles.settings}>settings</div>
-            </div> */}
             <a
               href="https://github.com/elgallouchi?tab=followers"
               className={styles.more_button}
